@@ -10,7 +10,7 @@
         <property name="javaFileEncoding" value="UTF-8"/>
 
         <!-- 自定义注释 -->
-        <commentGenerator type="com.bwcc.security.common.util.MyCommentGenerator"></commentGenerator>
+        <commentGenerator type="com.example.demo.util.MyCommentGenerator"></commentGenerator>
 
         <!-- 是否去除自动生成的注释 true：是 ： false:否    -->
 <!--       <commentGenerator>-->
