@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <!-- 目标数据库 -->
+    <context id="MySqlTables" targetRuntime="MyBatis3">
+
+        <property name="javaFileEncoding" value="UTF-8"/>
+
+        <!-- 自定义注释 -->
+        <commentGenerator type="com.bwcc.security.common.util.MyCommentGenerator"></commentGenerator>
+
+        <!-- 是否去除自动生成的注释 true：是 ： false:否    -->
+<!--       <commentGenerator>-->
+<!--           <property name="suppressDate" value="true"/>-->
+<!--           <property name="suppressAllComments" value="true" />-->
+<!--        </commentGenerator>-->
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://129.211.129.48:3306/test"
+                        userId="root"
+                        password="itnsf8888">
+
+            <property name="remarksReporting" value="true"/>
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!-- java实体类路径 -->
+        <javaModelGenerator targetPackage="com.bwcc.security.core.dataobject" targetProject="./src/main/java" >
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!-- sqlmap xml -->
+        <sqlMapGenerator targetPackage="sqlmapper"  targetProject="./src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!-- mapper -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.bwcc.security.core.dao"  targetProject="./src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <!-- 要逆向生成Dao的所有表 -->
+        <table tableName="system_accident"></table>
+<!--        <table tableName="function"></table>-->
+<!--        <table tableName="user_function"></table>-->
+    </context>
+</generatorConfiguration>

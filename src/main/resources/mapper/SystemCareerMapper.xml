@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.SystemCarrerMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.pojo.SystemCareerDO">
+
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="mech_id" jdbcType="INTEGER" property="mechId" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="value" jdbcType="VARCHAR" property="value" />
+    <result column="unit" jdbcType="VARCHAR" property="unit" />
+    <result column="is_cert" jdbcType="BIT" property="isCert" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="op_id" jdbcType="INTEGER" property="opId" />
+    <result column="op_name" jdbcType="VARCHAR" property="opName" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    id, mech_id, `type`, `name`, `value`, unit, is_cert, gmt_create, gmt_modified, op_id,
+    op_name
+  </sql>
+  <select id="getSystemCareer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from system_career
+  </select>
+
+  <select id="getSystemCareers" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from system_career
+    limit #{offset},#{size};
+  </select>
+
+
+</mapper>
