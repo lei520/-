@@ -31,7 +31,7 @@
         </javaTypeResolver>
 
         <!-- java实体类路径 -->
-        <javaModelGenerator targetPackage="com.bwcc.security.core.dataobject" targetProject="./src/main/java" >
+        <javaModelGenerator targetPackage="com.example.demo.generator.po" targetProject="./src/main/java" >
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
@@ -42,7 +42,7 @@
         </sqlMapGenerator>
 
         <!-- mapper -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.bwcc.security.core.dao"  targetProject="./src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.demo.generator.dao"  targetProject="./src/main/java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
