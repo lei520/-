@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 
+import com.example.demo.pojo.SystemAccident;
 import com.example.demo.pojo.SystemCareerDO;
 import com.example.demo.util.PageObject;
 import com.example.demo.util.Result;
@@ -8,11 +9,13 @@ import com.example.demo.util.Result;
 public interface DataBaseService {
 
 
-    Result<SystemCareerDO> getSystemCareer(PageObject pageObject);
+    Result<PageObject> getSystemCareer(PageObject pageObject);
 
-   /* Result<SystemCareerDO> delSystemCareer(Integer id);
+    Result<SystemAccident> systemAccidentById(Integer id);
 
-    Result<SystemCareerDO> SystemCareerById(Integer id);
+    Result updateSystemAccident(SystemAccident systemAccident);
 
-    Result<SystemCareerDO> addSystemCareer(SystemCareerDO systemCareerDO);*/
+    Result delSystemAccident(Integer id);
+
+    Result<PageObject> getSystemAccidentByCert(PageObject pageObject,Integer isCert);
 }
